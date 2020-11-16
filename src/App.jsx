@@ -8,19 +8,7 @@ class App extends Component {
   }
 
   updateRange = event => {
-    switch(event.target.name){
-      case 'hue':
-      this.setState({ hue: event.target.value })
-      break
-
-      case 'saturation':
-        this.setState({ saturation: event.target.value})
-        break
-
-        case 'lightness':
-          this.setState({ lightness: event.target.value})
-          break
-    }
+    this.setState({[event.target.name]: event.target.value})
   }
 
   render() {
@@ -32,6 +20,7 @@ class App extends Component {
   <h1 style= {{backgroundColor: currentColor}}>Pick A Color, Any Color</h1>
 
 <figure style={ { backgroundColor: currentColor  } } ></figure>
+
     <p>{`${currentColor}`}</p>
 
 <section>
