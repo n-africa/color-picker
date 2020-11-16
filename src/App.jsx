@@ -2,61 +2,45 @@ import React, { Component } from 'react'
 
 class App extends Component {
   state={
-    hue: '50',
-    saturation: '8',
-    lightness:'20',
+    hue: '180',
+    saturation: '50',
+    lightness:'50',
   }
 
-  updateHue= event => {
-    this.setState({
-      hue: event.target.value,
-    })
-    
-  }
-  updateSaturation= event => {
-        this.setState({
-          saturation: event.target.value,
-        })
+  updateRange = event => {
+    switch(event.target.name){
+      case 'hue':
+      this.setState({ hue: event.target.value })
+      break
 
+      case 'saturation':
+        this.setState({ saturation: event.target.value})
+        break
+
+        case 'lightness':
+          this.setState({ lightness: event.target.value})
+          break
+    }
   }
-  updateLightness= event => {
-    this.setState({
-      lightness: event.target.value,
-    })
-  }
-//   state = {
-//     title: 'Color Picker',
-//     color: '',
-//   }
-// updateColor = event =>{
-//   this.setState({
-//     color: event.target.value,
-//   })
-// }
+
   render() {
-    const currentColor= `hsl(${this.state.hue},${this.state.saturation}%,${this.state.lightness})%`
+    const currentColor= `HSL (${this.state.hue}, ${this.state.saturation}%, ${this.state.lightness}%)`
 
     return(
-//       <main>
-//         <h1>{this.state.title}</h1>
-//   <div style={ { backgroundColor: `${this.state.color}`  } } >
-//     <input type='range' onChange ={this.updateColor}/>
 
-// </div>  
-// </main>
 <div>
-  <h1>Pick A Color, Any Color</h1>
+  <h1 style= {{backgroundColor: currentColor}}>Pick A Color, Any Color</h1>
 
-<div style={ { backgroundColor: currentColor  } } ></div>
+<figure style={ { backgroundColor: currentColor  } } ></figure>
     <p>{`${currentColor}`}</p>
 
 <section>
 
-Hue: <input type= "range" min="0" max="360" value={this.state.hue} onChange={this.updateHue}/>
+Hue: <input type= "range" name="hue" min="0" max="360" value={this.state.hue} onChange={this.updateRange}/>
 
-Saturation: <input type= "range" min="0" max="100" value={this.state.saturation} onChange={this.updateSaturation} />
+Saturation: <input type= "range" name="saturation" min="0" max="100" value={this.state.saturation} onChange={this.updateRange} />
 
-Lightness: <input type= "range" min="0" max="100" value={this.state.lightness} onChange={this.updateLightness} />
+Lightness: <input type= "range" name="lightness" min="0" max="100" value={this.state.lightness} onChange={this.updateRange} />
 
 </section>
 
