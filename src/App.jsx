@@ -22,7 +22,7 @@ class App extends Component {
 //   })
 // }
   render() {
-    const currentColor= `hsl(${this.state.hue},${this.state.saturation},${this.state.lightness})`
+    const currentColor= `hsl(${this.state.hue},${this.state.saturation}%,${this.state.lightness})%`
 
     return(
 //       <main>
@@ -36,6 +36,7 @@ class App extends Component {
   <h1>Pick A Color, Any Color</h1>
 
 <div style={ { backgroundColor: currentColor  } } ></div>
+    <p>{`${currentColor}`}</p>
 
 <section>
 
