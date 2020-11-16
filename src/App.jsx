@@ -16,15 +16,12 @@ class App extends Component {
 
     return (
       <div>
-        <h1 style={{ backgroundColor: currentColor }}>
-          Pick A Color, Any Color
-        </h1>
+        <div
+          className="wallpaper"
+          style={{ backgroundColor: currentColor }}
+        ></div>
 
-        <p></p>
-        <p></p>
-        <p></p>
-
-        <body style={{ backgroundColor: currentColor }}></body>
+        <h1>Pick A Color, Any Color</h1>
 
         <p>{`${currentColor}`}</p>
 
@@ -69,6 +66,7 @@ class App extends Component {
         <p></p>
         <p></p>
         <p></p>
+
         <p>
           Here you can select a color and see it's Hue, Saturation and Lightness
           rating.

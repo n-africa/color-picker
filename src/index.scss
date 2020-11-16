@@ -1,9 +1,11 @@
 :root {
-    font: 16px / 1 sans-serif;
+    font: 18px / 1 "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
 html {
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -11,7 +13,19 @@ body {
     min-height: 100%;
 }
 
+.wallpaper {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
 h1 {
+    position: relative;
     display: flex;
     justify-content: center;
 }
@@ -22,9 +36,16 @@ section {
     max-width: 50vw;
     margin: auto;
     justify-content: center;
+    position: relative;
 }
 
 p {
     display: flex;
     justify-content: center;
+    position: relative;
+}
+
+button {
+    position: relative;
+    display: flex;
 }
