@@ -1,41 +1,81 @@
 import React, { Component } from 'react'
 
 class App extends Component {
-  state={
+  state = {
     hue: '180',
     saturation: '50',
-    lightness:'50',
+    lightness: '50',
   }
 
   updateRange = event => {
-    this.setState({[event.target.name]: event.target.value})
+    this.setState({ [event.target.name]: event.target.value })
   }
 
   render() {
-    const currentColor= `HSL (${this.state.hue}, ${this.state.saturation}%, ${this.state.lightness}%)`
+    const currentColor = `HSL(${this.state.hue}, ${this.state.saturation}%, ${this.state.lightness}%)`
 
-    return(
+    return (
+      <div>
+        <h1 style={{ backgroundColor: currentColor }}>
+          Pick A Color, Any Color
+        </h1>
 
-<div>
-  <h1 style= {{backgroundColor: currentColor}}>Pick A Color, Any Color</h1>
+        <p></p>
+        <p></p>
+        <p></p>
 
-<figure style={ { backgroundColor: currentColor  } } ></figure>
+        <body style={{ backgroundColor: currentColor }}></body>
 
-    <p>{`${currentColor}`}</p>
+        <p>{`${currentColor}`}</p>
 
-<section>
+        <p></p>
+        <p></p>
+        <p></p>
 
-Hue: <input type= "range" name="hue" min="0" max="360" value={this.state.hue} onChange={this.updateRange}/>
+        <section>
+          Hue:{' '}
+          <input
+            type="range"
+            name="hue"
+            min="0"
+            max="360"
+            value={this.state.hue}
+            onChange={this.updateRange}
+          />
+          Saturation:{' '}
+          <input
+            type="range"
+            name="saturation"
+            min="0"
+            max="100"
+            value={this.state.saturation}
+            onChange={this.updateRange}
+          />
+          Lightness:{' '}
+          <input
+            type="range"
+            name="lightness"
+            min="0"
+            max="100"
+            value={this.state.lightness}
+            onChange={this.updateRange}
+          />
+        </section>
 
-Saturation: <input type= "range" name="saturation" min="0" max="100" value={this.state.saturation} onChange={this.updateRange} />
-
-Lightness: <input type= "range" name="lightness" min="0" max="100" value={this.state.lightness} onChange={this.updateRange} />
-
-</section>
-
-</div>
-)
-}
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p>
+          Here you can select a color and see it's Hue, Saturation and Lightness
+          rating.
+        </p>
+      </div>
+    )
+  }
 }
 
 export default App
