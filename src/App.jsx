@@ -19,6 +19,11 @@ class App extends Component {
         })
 
   }
+  updateLightness= event => {
+    this.setState({
+      lightness: event.target.value,
+    })
+  }
 //   state = {
 //     title: 'Color Picker',
 //     color: '',
@@ -51,7 +56,7 @@ Hue: <input type= "range" min="0" max="360" value={this.state.hue} onChange={thi
 
 Saturation: <input type= "range" min="0" max="100" value={this.state.saturation} onChange={this.updateSaturation} />
 
-Lightness: <input type= "range" min="0" max="100" value={this.state.lightness} />
+Lightness: <input type= "range" min="0" max="100" value={this.state.lightness} onChange={this.updateLightness} />
 
 </section>
 
