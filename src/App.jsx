@@ -11,6 +11,13 @@ class App extends Component {
     this.setState({
       hue: event.target.value,
     })
+    
+  }
+  updateSaturation= event => {
+        this.setState({
+          saturation: event.target.value,
+        })
+
   }
 //   state = {
 //     title: 'Color Picker',
@@ -42,7 +49,7 @@ class App extends Component {
 
 Hue: <input type= "range" min="0" max="360" value={this.state.hue} onChange={this.updateHue}/>
 
-Saturation: <input type= "range" min="0" max="100" value={this.state.saturation} />
+Saturation: <input type= "range" min="0" max="100" value={this.state.saturation} onChange={this.updateSaturation} />
 
 Lightness: <input type= "range" min="0" max="100" value={this.state.lightness} />
 
